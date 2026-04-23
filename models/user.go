@@ -16,5 +16,5 @@ type User struct {
 }
 
 func AutoMigrate(db *gorm.DB) {
-	db.AutoMigrate(&User{}, &ChatSession{}, &ChatMessage{})
+	db.AutoMigrate(&User{}, &ChatSession{}, &ChatMessage{}, &BillCategory{}, &Bill{})
 }

@@ -4,13 +4,21 @@ import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import Home from '../views/Home.vue'
 import Chat from '../views/Chat.vue'
+import BillList from '../views/BillList.vue'
+import BillAdd from '../views/BillAdd.vue'
+import BillEdit from '../views/BillEdit.vue'
+import BillStats from '../views/BillStats.vue'
 
 const routes = [
   { path: '/', redirect: '/login' },
   { path: '/login', component: Login },
   { path: '/register', component: Register },
   { path: '/home', component: Home, meta: { requiresAuth: true } },
-  { path: '/chat', component: Chat, meta: { requiresAuth: true } }
+  { path: '/chat', component: Chat, meta: { requiresAuth: true } },
+  { path: '/bills', component: BillList, meta: { requiresAuth: true } },
+  { path: '/bills/add', component: BillAdd, meta: { requiresAuth: true } },
+  { path: '/bills/edit/:id', component: BillEdit, meta: { requiresAuth: true } },
+  { path: '/bills/stats', component: BillStats, meta: { requiresAuth: true } }
 ]
 
 const router = createRouter({
@@ -42,4 +50,3 @@ router.beforeEach(async (to) => {
 })
 
 export default router
-
